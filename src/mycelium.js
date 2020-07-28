@@ -96,6 +96,8 @@ class Mycelium {
       return this;
     }
     
+    console.warn('this is encoded', encoded)
+
     try {
       this._client.write(encoded);
     } catch (err) {
