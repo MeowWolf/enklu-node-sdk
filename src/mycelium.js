@@ -74,8 +74,10 @@ class Mycelium {
    * @param {object} msg.payload
    */
   sendMessage(msg) {
+    console.warn('this is msg', msg)
     // validate
     if (!validate(msg)) {
+      this._emit('error', msg)
       this._emit('error', new Error('Invalid message'));
       return this;
     }
